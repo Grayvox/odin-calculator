@@ -19,10 +19,33 @@ function divide(a, b) {
 }
 
 function operate(a, operator, b) {
+    let result;
+
+    switch(operator) {
+        case '+':
+            result = add(a, b);
+            break;
+
+        case '-':
+            result = subtract(a, b);
+            break;
+
+        case '*':
+            result = multiply(a, b);
+            break;
+
+        case '/':
+            result = divide(a, b);
+            break;
+        default:
+            console.log(`Error! Expected valid operator, but instead got " ${operator} "`);
+    }
+
+    return result;
 
 }
 
-console.log(add(1, 2));
-console.log(subtract(5, 2));
-console.log(multiply(2, 10));
-console.log(divide(10, 2));
+console.log(operate(1, '+', 2));
+console.log(operate(5, '-', 2));
+console.log(operate(2, '*', 10));
+console.log(operate(10, '/', 2));
