@@ -1,3 +1,11 @@
+let currentFirstNum;
+let currentSecondNum;
+let currentOperator;
+
+function operate(operator, a, b) {
+
+}
+
 function add(a, b) {
     return a + b;
 }
