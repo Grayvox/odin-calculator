@@ -1,3 +1,5 @@
+let display = `${currentFirstNum} ${currentOperator} ${currentSecondNum}`;
+
 let currentFirstNum;
 let currentOperator;
 let currentSecondNum;
