@@ -1,10 +1,6 @@
 let currentFirstNum;
-let currentSecondNum;
 let currentOperator;
-
-function operate(operator, a, b) {
-
-}
+let currentSecondNum;
 
 function add(a, b) {
     return a + b;
@@ -20,6 +16,10 @@ function multiply(a, b) {
 
 function divide(a, b) {
     return a / b;
+}
+
+function operate(a, operator, b) {
+
 }
 
 console.log(add(1, 2));
