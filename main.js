@@ -1,4 +1,4 @@
-let display = `${currentFirstNum} ${currentOperator} ${currentSecondNum}`;
+let display = ``;
 
 let currentFirstNum;
 let currentOperator;
