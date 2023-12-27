@@ -9,6 +9,8 @@ let currentFirstNum;
 let currentOperator;
 let currentSecondNum;
 
+const buttons = document.querySelectorAll('.button');
+
 function add(a, b) {
     return a + b;
 }
@@ -49,6 +51,14 @@ function operate(a, operator, b) {
     }
 
     return result;
+
+}
+
+buttons.forEach((item) => {
+    item.addEventListener('click', onButtonClick);
+});
+
+function onButtonClick(e) {
 
 }
 
