@@ -1,4 +1,5 @@
-let display = ``;
+const display = document.querySelector('#display-box');
+const buttons = document.querySelectorAll('.button');
 
 const opAdd = '+';
 const opSubtract = '-';
@@ -8,8 +9,6 @@ const opDivide = '/';
 let currentFirstNum;
 let currentOperator;
 let currentSecondNum;
-
-const buttons = document.querySelectorAll('.button');
 
 function add(a, b) {
     return a + b;
