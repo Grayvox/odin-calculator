@@ -1,5 +1,10 @@
 let display = ``;
 
+const opAdd = '+';
+const opSubtract = '-';
+const opMultiply = '*';
+const opDivide = '/';
+
 let currentFirstNum;
 let currentOperator;
 let currentSecondNum;
@@ -24,19 +29,19 @@ function operate(a, operator, b) {
     let result;
 
     switch(operator) {
-        case '+':
+        case opAdd:
             result = add(a, b);
             break;
 
-        case '-':
+        case opSubtract:
             result = subtract(a, b);
             break;
 
-        case '*':
+        case opMultiply:
             result = multiply(a, b);
             break;
 
-        case '/':
+        case opDivide:
             result = divide(a, b);
             break;
         default:
@@ -47,7 +52,7 @@ function operate(a, operator, b) {
 
 }
 
-console.log(operate(1, '+', 2));
-console.log(operate(5, '-', 2));
-console.log(operate(2, '*', 10));
-console.log(operate(10, '/', 2));
+console.log(operate(1, opAdd, 2));
+console.log(operate(5, opSubtract, 2));
+console.log(operate(2, opMultiply, 10));
+console.log(operate(10, opDivide, 2));
