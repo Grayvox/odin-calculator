@@ -58,7 +58,7 @@ buttons.forEach((item) => {
 });
 
 function onButtonClick(e) {
-
+    
 }
 
 console.log(operate(1, opAdd, 2));
