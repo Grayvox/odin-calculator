@@ -1,4 +1,6 @@
 const display = document.querySelector('#display-box');
+const displayPrevNum = document.querySelector('#prev-number');
+const displayCurrentNum = document.querySelector('#current-number');
 
 const numberButtons = document.querySelectorAll('.number')
 const operatorButtons = document.querySelectorAll('.operator');
@@ -13,8 +15,7 @@ const opMultiply = '*';
 const opDivide = '/';
 
 let currentNum;
-let currentFirstNum;
-let currentSecondNum;
+let previousNum;
 let currentOperator;
 
 function add(a, b) {
@@ -72,7 +73,7 @@ numberButtons.forEach((item) => {
     item.addEventListener('click', (e) => {
         // currentNum = e.currentTarget.value;
         // display.textContent += currentNum;
-
+        handleNumber(e.target.textContent);
     });
 });
 
