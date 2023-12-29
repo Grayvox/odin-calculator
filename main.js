@@ -61,7 +61,7 @@ function operate(a, operator, b) {
 }
 
 operatorButtons.forEach((item) => {
-    item.addEventListener('click', function (e) {
+    item.addEventListener('click', (e) => {
         // currentFirstNum = display.textContent;
         // currentOperator = e.currentTarget.value;
         // currentNum = undefined;
@@ -69,23 +69,24 @@ operatorButtons.forEach((item) => {
     });
 });
 numberButtons.forEach((item) => {
-    item.addEventListener('click', function (e) {
+    item.addEventListener('click', (e) => {
         // currentNum = e.currentTarget.value;
         // display.textContent += currentNum;
+
     });
 });
 
-equalsButton.addEventListener('click', function (e) {
+equalsButton.addEventListener('click', (e) => {
     // currentNum = currentSecondNum;
     // display.textContent = operate(Number(currentFirstNum), currentOperator, Number(currentSecondNum));
 });
-clearButton.addEventListener('click', function (e) {
+clearButton.addEventListener('click', (e) => {
 
 });
-deleteButton.addEventListener('click', function (e) {
+deleteButton.addEventListener('click', (e) => {
 
 });
-decimalButton.addEventListener('click', function (e) {
+decimalButton.addEventListener('click', (e) => {
 
 });
 
