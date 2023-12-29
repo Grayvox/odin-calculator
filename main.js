@@ -68,7 +68,6 @@ operatorButtons.forEach((item) => {
         // display.textContent = '';
     });
 });
-
 numberButtons.forEach((item) => {
     item.addEventListener('click', function (e) {
         // currentNum = e.currentTarget.value;
@@ -79,6 +78,15 @@ numberButtons.forEach((item) => {
 equalsButton.addEventListener('click', function (e) {
     // currentNum = currentSecondNum;
     // display.textContent = operate(Number(currentFirstNum), currentOperator, Number(currentSecondNum));
+});
+clearButton.addEventListener('click', function (e) {
+
+});
+deleteButton.addEventListener('click', function (e) {
+
+});
+decimalButton.addEventListener('click', function (e) {
+
 });
 
 console.log(operate(1, opAdd, 2));
