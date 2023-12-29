@@ -1,5 +1,6 @@
 const display = document.querySelector('#display-box');
-const buttons = document.querySelectorAll('.button');
+const numberButtons = document.querySelectorAll('.number')
+const operatorButtons = document.querySelectorAll('.operator');
 
 const opAdd = '+';
 const opSubtract = '-';
@@ -51,12 +52,20 @@ function operate(a, operator, b) {
 
 }
 
-buttons.forEach((item) => {
-    item.addEventListener('click', onButtonClick);
+operatorButtons.forEach((item) => {
+    item.addEventListener('click', onOperatorClick);
 });
 
-function onButtonClick(e) {
+numberButtons.forEach((item) => {
+    item.addEventListener('click', onNumberClick);
+});
 
+function onOperatorClick(e) {
+
+}
+
+function onNumberClick(e) {
+    
 }
 
 console.log(operate(1, opAdd, 2));
