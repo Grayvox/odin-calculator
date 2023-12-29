@@ -6,9 +6,7 @@ const opSubtract = '-';
 const opMultiply = '*';
 const opDivide = '/';
 
-let currentFirstNum;
-let currentOperator;
-let currentSecondNum;
+let currentDisplay;
 
 function add(a, b) {
     return a + b;
@@ -58,7 +56,7 @@ buttons.forEach((item) => {
 });
 
 function onButtonClick(e) {
-    
+
 }
 
 console.log(operate(1, opAdd, 2));
