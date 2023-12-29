@@ -61,31 +61,25 @@ function operate(a, operator, b) {
 }
 
 operatorButtons.forEach((item) => {
-    item.addEventListener('click', onOperatorClick);
+    item.addEventListener('click', function (e) {
+        // currentFirstNum = display.textContent;
+        // currentOperator = e.currentTarget.value;
+        // currentNum = undefined;
+        // display.textContent = '';
+    });
 });
 
 numberButtons.forEach((item) => {
-    item.addEventListener('click', onNumberClick);
+    item.addEventListener('click', function (e) {
+        // currentNum = e.currentTarget.value;
+        // display.textContent += currentNum;
+    });
 });
 
-equalsButton.addEventListener('click', onEqualsClick);
-
-function onOperatorClick(e) {
-    // currentFirstNum = display.textContent;
-    // currentOperator = e.currentTarget.value;
-    // currentNum = undefined;
-    // display.textContent = '';
-}
-
-function onNumberClick(e) {
-    // currentNum = e.currentTarget.value;
-    // display.textContent += currentNum;
-}
-
-function onEqualsClick(e) {
+equalsButton.addEventListener('click', function (e) {
     // currentNum = currentSecondNum;
     // display.textContent = operate(Number(currentFirstNum), currentOperator, Number(currentSecondNum));
-}
+});
 
 console.log(operate(1, opAdd, 2));
 console.log(operate(5, opSubtract, 2));
