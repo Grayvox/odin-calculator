@@ -1,17 +1,21 @@
 const display = document.querySelector('#display-box');
+
 const numberButtons = document.querySelectorAll('.number')
 const operatorButtons = document.querySelectorAll('.operator');
+const equalsButton = document.querySelector('#equals');
+const clearButton = document.querySelector('#clear-button');
+const deleteButton = document.querySelector('#delete-button');
+const decimalButton = document.querySelector('#decimal-button');
 
 const opAdd = '+';
 const opSubtract = '-';
 const opMultiply = '*';
 const opDivide = '/';
 
+let currentNum;
 let currentFirstNum;
 let currentSecondNum;
 let currentOperator;
-
-let currentDisplay = '';
 
 function add(a, b) {
     return Math.round((a + b) * 100) / 100;
@@ -64,14 +68,23 @@ numberButtons.forEach((item) => {
     item.addEventListener('click', onNumberClick);
 });
 
+equalsButton.addEventListener('click', onEqualsClick);
+
 function onOperatorClick(e) {
-    currentFirstNum = currentDisplay;
+    // currentFirstNum = display.textContent;
+    // currentOperator = e.currentTarget.value;
+    // currentNum = undefined;
+    // display.textContent = '';
 }
 
 function onNumberClick(e) {
-    let currentNum = e.currentTarget.value;
+    // currentNum = e.currentTarget.value;
+    // display.textContent += currentNum;
+}
 
-    currentDisplay += currentNum;
+function onEqualsClick(e) {
+    // currentNum = currentSecondNum;
+    // display.textContent = operate(Number(currentFirstNum), currentOperator, Number(currentSecondNum));
 }
 
 console.log(operate(1, opAdd, 2));
