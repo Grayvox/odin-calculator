@@ -7,7 +7,11 @@ const opSubtract = '-';
 const opMultiply = '*';
 const opDivide = '/';
 
-let currentDisplay;
+let currentFirstNum;
+let currentSecondNum;
+let currentOperator;
+
+let currentDisplay = '';
 
 function add(a, b) {
     return Math.round((a + b) * 100) / 100;
@@ -61,11 +65,13 @@ numberButtons.forEach((item) => {
 });
 
 function onOperatorClick(e) {
-
+    currentFirstNum = currentDisplay;
 }
 
 function onNumberClick(e) {
-    
+    let currentNum = e.currentTarget.value;
+
+    currentDisplay += currentNum;
 }
 
 console.log(operate(1, opAdd, 2));
