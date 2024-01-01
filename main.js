@@ -39,19 +39,19 @@ function operate(a, operator, b) {
 
     switch(operator) {
         case opAdd:
-            result = add(a, b);
+            result = add(Number(a), Number(b));
             break;
 
         case opSubtract:
-            result = subtract(a, b);
+            result = subtract(Number(a), Number(b));
             break;
 
         case opMultiply:
-            result = multiply(a, b);
+            result = multiply(Number(a), Number(b));
             break;
 
         case opDivide:
-            result = divide(a, b);
+            result = divide(Number(a), Number(b));
             break;
         default:
             console.log(`Error! Expected valid operator, but instead got " ${operator} "`);
@@ -81,6 +81,7 @@ numberButtons.forEach((item) => {
 equalsButton.addEventListener('click', (e) => {
     // currentNum = currentSecondNum;
     // display.textContent = operate(Number(currentFirstNum), currentOperator, Number(currentSecondNum));
+    handleEquals();
 });
 clearButton.addEventListener('click', (e) => {
 
@@ -97,14 +98,6 @@ function handleNumber(num) {
         currentNum += num;
         displayCurrentNum.textContent = currentNum;
     }
-}
-
-function handleOp(operator) {
-    if (!currentNum) return;
-    previousNum = currentNum;
-    displayPrevNum.textContent = previousNum;
-    displayCurrentNum.textContent = '';
-    currentNum = '';
 }
 
 console.log(operate(1, opAdd, 2));
