@@ -63,24 +63,16 @@ function operate(a, operator, b) {
 
 operatorButtons.forEach((item) => {
     item.addEventListener('click', (e) => {
-        // currentFirstNum = display.textContent;
-        // currentOperator = e.currentTarget.value;
-        // currentNum = undefined;
-        // display.textContent = '';
         handleOp(e.target.textContent);
     });
 });
 numberButtons.forEach((item) => {
     item.addEventListener('click', (e) => {
-        // currentNum = e.currentTarget.value;
-        // display.textContent += currentNum;
         handleNumber(e.target.textContent);
     });
 });
 
 equalsButton.addEventListener('click', (e) => {
-    // currentNum = currentSecondNum;
-    // display.textContent = operate(Number(currentFirstNum), currentOperator, Number(currentSecondNum));
     handleEquals();
 });
 clearButton.addEventListener('click', (e) => {
