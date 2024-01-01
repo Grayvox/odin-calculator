@@ -98,7 +98,7 @@ function handleOp(operator) {
 
 function handleEquals() {
     if (!currentNum || !previousNum) return;
-    let result = operate(currentNum, currentOperator, previousNum);
+    let result = operate(previousNum, currentOperator, currentNum);
     previousNum = '';
     displayPrevNum.textContent = previousNum;
     displayCurrentNum.textContent = result;
