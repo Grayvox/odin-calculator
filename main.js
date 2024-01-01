@@ -62,19 +62,14 @@ function operate(a, operator, b) {
 }
 
 operatorButtons.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        handleOp(e.target.textContent);
-    });
+    item.addEventListener('click', (e) => handleOp(e.target.textContent));
 });
 numberButtons.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        handleNumber(e.target.textContent);
-    });
+    item.addEventListener('click', (e) => handleNumber(e.target.textContent));
 });
 
-equalsButton.addEventListener('click', (e) => {
-    handleEquals();
-});
+equalsButton.addEventListener('click', () => handleEquals());
+
 clearButton.addEventListener('click', (e) => {
 
 });
