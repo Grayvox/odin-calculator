@@ -100,6 +100,15 @@ function handleNumber(num) {
     }
 }
 
+function handleOp(operator) {
+    if (!currentNum) return;
+    previousNum = currentNum;
+    currentOperator = operator;
+    displayPrevNum.textContent = previousNum; 
+    currentNum = '';
+    displayCurrentNum.textContent = currentNum;
+}
+
 console.log(operate(1, opAdd, 2));
 console.log(operate(5, opSubtract, 2));
 console.log(operate(2, opMultiply, 10));
