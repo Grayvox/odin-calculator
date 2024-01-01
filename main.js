@@ -14,9 +14,9 @@ const opSubtract = '-';
 const opMultiply = '*';
 const opDivide = '/';
 
-let currentNum;
-let previousNum;
-let currentOperator;
+let currentNum = '';
+let previousNum = '';
+let currentOperator = '';
 
 function add(a, b) {
     return Math.round((a + b) * 100) / 100;
@@ -67,6 +67,7 @@ operatorButtons.forEach((item) => {
         // currentOperator = e.currentTarget.value;
         // currentNum = undefined;
         // display.textContent = '';
+        handleOp(e.target.textContent);
     });
 });
 numberButtons.forEach((item) => {
@@ -90,6 +91,21 @@ deleteButton.addEventListener('click', (e) => {
 decimalButton.addEventListener('click', (e) => {
 
 });
+
+function handleNumber(num) {
+    if (currentNum.length <= 10) {
+        currentNum += num;
+        displayCurrentNum.textContent = currentNum;
+    }
+}
+
+function handleOp(operator) {
+    if (!currentNum) return;
+    previousNum = currentNum;
+    displayPrevNum.textContent = previousNum;
+    displayCurrentNum.textContent = '';
+    currentNum = '';
+}
 
 console.log(operate(1, opAdd, 2));
 console.log(operate(5, opSubtract, 2));
