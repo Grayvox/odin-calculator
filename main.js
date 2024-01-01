@@ -104,9 +104,17 @@ function handleOp(operator) {
     if (!currentNum) return;
     previousNum = currentNum;
     currentOperator = operator;
-    displayPrevNum.textContent = previousNum; 
+    displayPrevNum.textContent = previousNum + ` ${operator}`; 
     currentNum = '';
     displayCurrentNum.textContent = currentNum;
+}
+
+function handleEquals() {
+    if (!currentNum || !previousNum) return;
+    let result = operate(currentNum, currentOperator, previousNum);
+    previousNum = '';
+    displayPrevNum.textContent = previousNum;
+    displayCurrentNum.textContent = result;
 }
 
 console.log(operate(1, opAdd, 2));
