@@ -2,7 +2,7 @@ const display = document.querySelector('#display-box');
 const displayPrevNum = document.querySelector('#prev-number');
 const displayCurrentNum = document.querySelector('#current-number');
 
-const numberButtons = document.querySelectorAll('.number')
+const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
 const equalsButton = document.querySelector('#equals');
 const clearButton = document.querySelector('#clear-button');
@@ -19,19 +19,19 @@ let previousNum = '';
 let currentOperator = '';
 
 function add(a, b) {
-    return Math.round((a + b) * 100) / 100;
+    return Math.round((a + b) * 100000) / 100000;
 }
 
 function subtract(a, b) {
-    return Math.round((a - b) * 100) / 100;
+    return Math.round((a - b) * 100000) / 100000;
 }
 
 function multiply(a, b) {
-    return Math.round((a * b) * 100) / 100;
+    return Math.round((a * b) * 100000) / 100000;
 }
 
 function divide(a, b) {
-    return Math.round((a / b) * 100) / 100;
+    return Math.round((a / b) * 100000) / 100000;
 }
 
 function operate(a, operator, b) {
@@ -70,9 +70,7 @@ numberButtons.forEach((item) => {
 
 equalsButton.addEventListener('click', () => handleEquals());
 
-clearButton.addEventListener('click', (e) => {
-
-});
+clearButton.addEventListener('click', (e) => clearCal());
 deleteButton.addEventListener('click', (e) => {
 
 });
@@ -101,7 +99,15 @@ function handleEquals() {
     let result = operate(previousNum, currentOperator, currentNum);
     previousNum = '';
     displayPrevNum.textContent = previousNum;
-    displayCurrentNum.textContent = result;
+    currentNum = result;
+    displayCurrentNum.textContent = currentNum;
+}
+
+function clearCal() {
+    currentNum = '';
+    previousNum = '';
+    displayPrevNum.textContent = previousNum;
+    displayCurrentNum.textContent = currentNum;
 }
 
 console.log(operate(1, opAdd, 2));
