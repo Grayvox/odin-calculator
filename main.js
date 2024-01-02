@@ -71,9 +71,7 @@ numberButtons.forEach((item) => {
 equalsButton.addEventListener('click', () => handleEquals());
 
 clearButton.addEventListener('click', (e) => clearCal());
-deleteButton.addEventListener('click', (e) => {
-
-});
+deleteButton.addEventListener('click', (e) => deleteLastAction());
 decimalButton.addEventListener('click', (e) => {
 
 });
@@ -87,6 +85,7 @@ function handleNumber(num) {
 
 function handleOp(operator) {
     if (!currentNum) return;
+    
     previousNum = currentNum;
     currentOperator = operator;
     displayPrevNum.textContent = previousNum + ` ${operator}`; 
@@ -96,7 +95,9 @@ function handleOp(operator) {
 
 function handleEquals() {
     if (!currentNum || !previousNum) return;
+
     let result = operate(previousNum, currentOperator, currentNum);
+
     previousNum = '';
     displayPrevNum.textContent = previousNum;
     currentNum = result;
@@ -104,10 +105,23 @@ function handleEquals() {
 }
 
 function clearCal() {
+
     currentNum = '';
     previousNum = '';
+
     displayPrevNum.textContent = previousNum;
     displayCurrentNum.textContent = currentNum;
+}
+
+function deleteLastAction() {
+
+    if (!currentNum) {
+        previousNum = '';
+        displayPrevNum.textContent = '';
+    }
+
+    currentNum = '';
+    displayCurrentNum.textContent = '';
 }
 
 console.log(operate(1, opAdd, 2));
