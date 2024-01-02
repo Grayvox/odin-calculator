@@ -17,6 +17,7 @@ const opDivide = '/';
 let currentNum = '';
 let previousNum = '';
 let currentOperator = '';
+let decimal;
 
 function add(a, b) {
     return Math.round((a + b) * 100000) / 100000;
@@ -72,9 +73,7 @@ equalsButton.addEventListener('click', () => handleEquals());
 
 clearButton.addEventListener('click', (e) => clearCal());
 deleteButton.addEventListener('click', (e) => deleteLastAction());
-decimalButton.addEventListener('click', (e) => {
-
-});
+decimalButton.addEventListener('click', (e) => addDecimal());
 
 function handleNumber(num) {
     if (currentNum.length <= 10) {
@@ -85,11 +84,13 @@ function handleNumber(num) {
 
 function handleOp(operator) {
     if (!currentNum) return;
-    
+
     previousNum = currentNum;
     currentOperator = operator;
-    displayPrevNum.textContent = previousNum + ` ${operator}`; 
     currentNum = '';
+    decimal = false;
+    
+    displayPrevNum.textContent = previousNum + ` ${operator}`; 
     displayCurrentNum.textContent = currentNum;
 }
 
@@ -99,8 +100,10 @@ function handleEquals() {
     let result = operate(previousNum, currentOperator, currentNum);
 
     previousNum = '';
-    displayPrevNum.textContent = previousNum;
     currentNum = result;
+    decimal = false;
+
+    displayPrevNum.textContent = previousNum;
     displayCurrentNum.textContent = currentNum;
 }
 
@@ -108,6 +111,7 @@ function clearCal() {
 
     currentNum = '';
     previousNum = '';
+    decimal = false;
 
     displayPrevNum.textContent = previousNum;
     displayCurrentNum.textContent = currentNum;
@@ -122,6 +126,15 @@ function deleteLastAction() {
 
     currentNum = '';
     displayCurrentNum.textContent = '';
+    decimal = false;
+}
+
+function addDecimal() {
+    if (decimal == true) return;
+
+    currentNum += '.'
+    displayCurrentNum.textContent = currentNum;
+    decimal = true;
 }
 
 console.log(operate(1, opAdd, 2));
