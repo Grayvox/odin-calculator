@@ -90,12 +90,11 @@ function handleNumber(num) {
 function handleOp(operator) {
     if (!currentNum) return;
 
-    currentOperator = operator;
-
     if (currentNum && previousNum) {
         handleEquals();
     }
 
+    currentOperator = operator;
     previousNum = currentNum;
     currentNum = '';
     decimal = false;
@@ -146,3 +145,5 @@ function addDecimal() {
     displayCurrentNum.textContent = currentNum;
     decimal = true;
 }
+
+
