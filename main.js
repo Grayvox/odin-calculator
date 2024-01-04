@@ -38,6 +38,12 @@ function divide(a, b) {
 function operate(a, operator, b) {
     let result;
 
+    if (a == 0 && operator == opDivide && b == 0) {
+        currentNum = '';
+        previousNum = '';
+        return alert('Foolish mortal, you thought thou could commit such crimes?');
+    }
+
     switch(operator) {
         case opAdd:
             result = add(Number(a), Number(b));
@@ -70,10 +76,9 @@ numberButtons.forEach((item) => {
 });
 
 equalsButton.addEventListener('click', () => handleEquals());
-
-clearButton.addEventListener('click', (e) => clearCal());
-deleteButton.addEventListener('click', (e) => deleteLastAction());
-decimalButton.addEventListener('click', (e) => addDecimal());
+clearButton.addEventListener('click', () => clearCal());
+deleteButton.addEventListener('click', () => deleteLastAction());
+decimalButton.addEventListener('click', () => addDecimal());
 
 function handleNumber(num) {
     if (currentNum.length <= 10) {
@@ -85,11 +90,16 @@ function handleNumber(num) {
 function handleOp(operator) {
     if (!currentNum) return;
 
-    previousNum = currentNum;
     currentOperator = operator;
+
+    if (currentNum && previousNum) {
+        handleEquals();
+    }
+
+    previousNum = currentNum;
     currentNum = '';
     decimal = false;
-    
+
     displayPrevNum.textContent = previousNum + ` ${operator}`; 
     displayCurrentNum.textContent = currentNum;
 }
@@ -136,8 +146,3 @@ function addDecimal() {
     displayCurrentNum.textContent = currentNum;
     decimal = true;
 }
-
-console.log(operate(1, opAdd, 2));
-console.log(operate(5, opSubtract, 2));
-console.log(operate(2, opMultiply, 10));
-console.log(operate(10, opDivide, 2));
