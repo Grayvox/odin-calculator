@@ -1,4 +1,3 @@
-const display = document.querySelector('#display-box');
 const displayPrevNum = document.querySelector('#prev-number');
 const displayCurrentNum = document.querySelector('#current-number');
 
@@ -121,6 +120,7 @@ function clearCal() {
 
     currentNum = '';
     previousNum = '';
+    currentOperator = '';
     decimal = false;
 
     displayPrevNum.textContent = previousNum;
@@ -128,15 +128,9 @@ function clearCal() {
 }
 
 function deleteLastAction() {
-
-    if (!currentNum) {
-        previousNum = '';
-        displayPrevNum.textContent = '';
-    }
-
-    currentNum = '';
-    displayCurrentNum.textContent = '';
-    decimal = false;
+    currentNum = currentNum.substring(0, currentNum.length - 1);
+    displayCurrentNum.textContent = currentNum;
+    if (!currentNum.includes('.')) decimal = false;
 }
 
 function addDecimal() {
@@ -174,6 +168,7 @@ function handleKey(event) {
             break;
         case '.':
             addDecimal();
+            break;
         case '=':
         case 'Enter':
             handleEquals();
