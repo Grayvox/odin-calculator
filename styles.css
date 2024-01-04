@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 
+#bg {
+    background-image: url(./img/background-castle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1B2452;
+}
+
 #page {
     display: flex;
     flex-direction: column;
@@ -67,6 +74,9 @@
     width: 200px;
     padding: 10px 20px;
     font-size: 30px;
+    background-color: #c88f8f;
+    border-color: #c88f8f;
+    border-radius: 5px;
 }
 
 .small-button {
@@ -74,6 +84,12 @@
     height: 60px;
     width: 97.62px;
     font-size: 30px;
+}
+
+.operator {
+    border-radius: 5px;
+    background-color: #9cb7b7;
+    border-color: #9cb7b7;
 }
 
 .large-button:hover, .small-button:hover {
