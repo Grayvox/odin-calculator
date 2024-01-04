@@ -17,6 +17,7 @@ let currentNum = '';
 let previousNum = '';
 let currentOperator = '';
 let decimal;
+let calResult;
 
 function add(a, b) {
     return Math.round((a + b) * 100000) / 100000;
@@ -108,10 +109,10 @@ function handleEquals() {
 
     // Fix delete button not working!
 
-    let result = operate(previousNum, currentOperator, currentNum);
+    calResult = operate(previousNum, currentOperator, currentNum);
 
     previousNum = '';
-    currentNum = result;
+    currentNum = calResult;
     decimal = false;
 
     displayPrevNum.textContent = previousNum;
@@ -130,6 +131,7 @@ function clearCal() {
 }
 
 function deleteLastAction() {
+    currentNum = currentNum.toString();
     currentNum = currentNum.substring(0, currentNum.length - 1);
     displayCurrentNum.textContent = currentNum;
     if (!currentNum.includes('.')) decimal = false;
