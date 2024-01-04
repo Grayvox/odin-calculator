@@ -42,15 +42,14 @@
 #prev-number, #current-number {
     max-height: 40px;
     width: 380px;
+    text-align: end;
 }
 
 #prev-number {
-    text-align: end;
     font-size: 20px;
 }
 
 #current-number {
-    text-align: end;
     font-size: 40px;
 }
 
