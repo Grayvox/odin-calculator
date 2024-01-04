@@ -26,3 +26,28 @@
     font-size: 20px;
     font-style: italic;
 }
+
+#buttons-box {
+    height: 319px;
+    width: 405px;
+}
+
+.large-button {
+    height: 60px;
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 30px;
+}
+
+.small-button {
+    margin-top: 4.68px;
+    height: 60px;
+    width: 97.62px;
+    font-size: 30px;
+}
+
+.button:hover {
+    border-radius: 5px;
+    background-color: #97d4d4;
+    border-color: #97d4d4;
+}

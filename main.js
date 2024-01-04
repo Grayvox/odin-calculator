@@ -106,6 +106,8 @@ function handleOp(operator) {
 function handleEquals() {
     if (!currentNum || !previousNum) return;
 
+    // Fix delete button not working!
+
     let result = operate(previousNum, currentOperator, currentNum);
 
     previousNum = '';
