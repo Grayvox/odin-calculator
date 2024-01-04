@@ -79,6 +79,7 @@ equalsButton.addEventListener('click', () => handleEquals());
 clearButton.addEventListener('click', () => clearCal());
 deleteButton.addEventListener('click', () => deleteLastAction());
 decimalButton.addEventListener('click', () => addDecimal());
+document.addEventListener('keydown', (e) => handleKey(e));
 
 function handleNumber(num) {
     if (currentNum.length <= 10) {
@@ -144,6 +145,45 @@ function addDecimal() {
     currentNum += '.'
     displayCurrentNum.textContent = currentNum;
     decimal = true;
+}
+
+function handleKey(event) {
+    event.preventDefault();
+
+    switch (event.key) {
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+        case '0':
+            handleNumber(event.key);
+            break;
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            handleOp(event.key);
+            break;
+        case 'x':
+            handleOp(opMultiply);
+            break;
+        case '.':
+            addDecimal();
+        case '=':
+        case 'Enter':
+            handleEquals();
+            break;
+        case 'Backspace':
+        case 'Delete':
+            deleteLastAction();
+            break;
+    }
+
 }
 
 
