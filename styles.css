@@ -27,6 +27,33 @@
     font-style: italic;
 }
 
+#display-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    height: 80px;
+    width: 365px;
+    border-radius: 5px;
+    background-color: #434448;
+}
+
+#prev-number, #current-number {
+    max-height: 40px;
+    width: 380px;
+}
+
+#prev-number {
+    text-align: end;
+    font-size: 20px;
+}
+
+#current-number {
+    text-align: end;
+    font-size: 40px;
+}
+
 #buttons-box {
     height: 319px;
     width: 405px;
