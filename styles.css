@@ -46,7 +46,7 @@
     font-size: 30px;
 }
 
-.button:hover {
+.large-button:hover, .small-button:hover {
     border-radius: 5px;
     background-color: #97d4d4;
     border-color: #97d4d4;
